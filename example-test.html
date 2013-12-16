@@ -1,0 +1,46 @@
+<!-- 
+Desc:		Ajax json request example (IE compatible)
+Author: 	@findemor
+Date:		16/12/2013
+Website:	http://findemor.porexpertos.es
+Version: 	1.0
+-->
+<html>
+<head>
+	<!-- script example -->
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="js-get.js"></script>
+	   <script>
+		   $(document).ready(function(){
+				///prepare request with uri, get parameters and onsuccess / onerror callbacks
+				var req = new JsGet("http://service.com/group/operation", { access_token: "XXXXDDDDDFFFF", lat:"40.1", lng:"-4.2" }, onsuc, null);
+				///execute request
+				req.execute();
+		   });
+		   
+		   //onsuccess callback function, where we can do something with json data
+		   function onsuc (data)
+		   {
+				alert(data);
+				/* do something */
+				/*if (data != null) {
+					var parsedData = $.parseJSON(data);
+					if (parsedData != null) {
+						alert(parsedData.id);
+					}
+				}*/
+			};
+			
+			//onerr is not defined in this example
+			/*
+			function onerr (msg)
+			{ alert(msg); }
+			*/
+
+	   </script>
+	<!-- script example end -->
+</head>
+<body>
+	
+</body>
+</html>
